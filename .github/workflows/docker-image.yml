@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-    - run: |
+      run: |
        cd dynamic
        docker build . --file Dockerfile --tag kdedow/ubuntu-10.04:$(date +%s)

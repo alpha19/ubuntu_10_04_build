@@ -20,6 +20,8 @@ RUN cd /usr/local/openssl-1.0.2o && \
 	make install && \
 	make clean && \
 	make distclean && \
+	rm /usr/local/openssl-1.0.2o.tar.gz.sha1 && \
+	rm -r /usr/local/openssl-1.0.2o && \
 	echo "/usr/local/openssl/lib" >> /etc/ld.so.conf.d/openssl.conf && \
 	ldconfig -v && \
 	/usr/local/openssl/bin/openssl version
@@ -57,6 +59,8 @@ RUN curl https://curl.haxx.se/ca/cacert.pem -o /cacert.pem && \
 	echo "[http]" >> ~/.gitconfig && \
 	echo "sslCAinfo = /cacert.pem" >> ~/.gitconfig
 
+RUN rm /usr/local/openssl-1.0.2o.tar.gz.sha1 && \
+	rm -r /usr/local/openssl-1.0.2o
 # Let's go!
 WORKDIR /
 CMD "/bin/bash"

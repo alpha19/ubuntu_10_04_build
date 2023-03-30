@@ -25,7 +25,7 @@ RUN cd /usr/local/openssl-1.0.2o && \
 	/usr/local/openssl/bin/openssl version
 
 RUN rm /usr/local/openssl-1.0.2o.tar.gz.sha1 && \
-	rm -r /usr/local/openssl-1.0.2o && \
+	rm -r /usr/local/openssl-1.0.2o
 
 # Build new Git
 ADD ./dependencies/git-2.9.5.tar.gz /usr/local
